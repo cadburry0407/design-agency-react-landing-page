@@ -1,0 +1,139 @@
+@use '../mixin.scss' as mixin;
+
+.testimonials {
+  &__heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixin.bp-small {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .btn-testimonials {
+      @include mixin.bp-small {
+        margin-top: 2rem;
+      }
+
+      &-left,
+      &-right {
+        border: none;
+        background: transparent;
+        width: 8rem;
+        height: 8rem;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: all 0.2s ease-in-out;
+
+        @include mixin.bp-small {
+          width: 6rem;
+          height: 6rem;
+        }
+      }
+
+      &-left {
+        background-image: url('../images/btn-left.png');
+        background-size: cover;
+      }
+
+      &-left:active:focus,
+      &-right:active:focus {
+        transform: scale(110%);
+      }
+
+      &-right {
+        background-image: url('../images/btn-right.png');
+        background-size: cover;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    will-change: transform;
+    user-select: none;
+    padding: 10rem 3rem;
+    scroll-behavior: smooth;
+
+    &.active {
+      background: rgba(255, 255, 255, 0.3);
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    @include mixin.bp-small {
+      padding: 5rem 1rem;
+    }
+
+    &-item {
+      border-radius: 2rem;
+      margin-right: 4rem;
+      -webkit-box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.3);
+      padding: 3rem;
+      min-width: 47rem;
+
+      @include mixin.bp-small {
+        padding: 2rem;
+        min-width: 30rem;
+        margin-right: 2rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+
+        @include mixin.bp-small {
+          font-size: 1.6rem;
+        }
+      }
+
+      &-user {
+        margin-top: 2rem;
+        display: flex;
+
+        @include mixin.bp-small {
+          margin-top: 1rem;
+        }
+
+        img {
+          width: 10rem;
+          height: 10rem;
+          border-radius: 50%;
+
+          @include mixin.bp-small {
+            width: 7.5rem;
+            height: 7.5rem;
+          }
+        }
+
+        & .user-box {
+          display: flex;
+          flex-direction: column;
+          margin-top: 1rem;
+
+          & h3:first-child {
+            font-size: 2rem;
+            font-weight: 600;
+
+            @include mixin.bp-small {
+              font-size: 1.4rem;
+            }
+          }
+
+          & h3:last-child {
+            font-size: 2rem;
+            font-weight: 400;
+
+            @include mixin.bp-small {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

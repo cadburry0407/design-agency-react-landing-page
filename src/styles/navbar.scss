@@ -1,0 +1,196 @@
+@use '../mixin.scss' as mixin;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  &.activated {
+    background-color: mixin.$color-primary-dark;
+  }
+
+  &.activated nav {
+    background-color: mixin.$color-primary-dark;
+  }
+
+  &.activated .nav__btn-login {
+    border: 1px solid #fff;
+  }
+
+  &.activated .nav__btn-register {
+    background-color: #f55f1d;
+  }
+}
+
+.nav {
+  max-width: 120rem;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  background-color: mixin.$color-primary-light-1;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  a {
+    cursor: pointer;
+  }
+
+  .logo-link {
+    margin-right: auto;
+  }
+
+  &__logo {
+    width: 18rem;
+    height: 5rem;
+    margin: 1rem auto 1rem 2rem;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  &__link {
+    color: mixin.$color-font;
+    margin-right: 3rem;
+
+    @include mixin.bp-medium {
+      margin-right: 1rem;
+    }
+  }
+
+  &__links &__items {
+    @include mixin.bp-medium {
+      display: none;
+    }
+  }
+
+  &__links &__items:first-child > a {
+    display: flex;
+  }
+
+  &__links &__items:first-child > a::after {
+    content: '';
+    display: inline-block;
+    background: url('../images/v-icon.png') no-repeat;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    position: relative;
+    top: 0.8rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+  }
+
+  &__btn {
+    @include mixin.bp-medium {
+      display: none;
+    }
+  }
+
+  &__btn-login {
+    border: 1px solid mixin.$color-primary-dark;
+    background-color: transparent;
+  }
+
+  &__btn-register {
+    color: #fff;
+    background-color: mixin.$color-primary-dark;
+    border: 1px solid mixin.$color-primary-dark;
+  }
+
+  &__btn-login,
+  &__btn-register {
+    cursor: pointer;
+    margin-right: 2rem;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    font: inherit;
+
+    @include mixin.bp-medium {
+      margin-right: 1rem;
+    }
+  }
+
+  .menu {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 7rem;
+    right: 0rem;
+    z-index: 9999;
+    background-color: mixin.$color-primary-dark;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 100% 0;
+    transition: transform 0.25s cubic-bezier(0.5, 0, 0.5, 1),
+      opacity 0.25s linear, visibility 0s linear;
+    transition-delay: 0s, 0s, 0s;
+    transition-delay: 0s, 0s, 0.25s;
+
+    &__list {
+      list-style: none;
+    }
+
+    &__list-item {
+      list-style: none;
+      padding: 1rem;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 2.5rem;
+        display: block;
+      }
+
+      a:hover {
+        color: #f55f1d;
+        transform: scale(110%);
+        transition: all 0.2s ease-out;
+      }
+    }
+
+    &.activated {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
+    }
+  }
+
+  .nav__btn-toggle-menu {
+    color: #000;
+    border: none;
+    background-color: transparent;
+    font-size: 3.5rem;
+    cursor: pointer;
+    margin-right: 3rem;
+    display: none;
+
+    @include mixin.bp-medium {
+      display: block;
+    }
+
+    &.activated .open-menu-icon {
+      display: none;
+    }
+
+    &.activated .close-menu-icon {
+      display: block;
+    }
+
+    & .close-menu-icon {
+      display: none;
+    }
+  }
+}

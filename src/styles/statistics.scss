@@ -1,0 +1,70 @@
+@use '../mixin.scss' as mixin;
+
+.stats {
+  display: flex;
+  margin: 6rem 0rem;
+
+  @include mixin.bp-small {
+    flex-wrap: wrap;
+  }
+
+  &__item-image {
+    display: block;
+    width: 7rem;
+    margin: 0 auto;
+  }
+
+  &__item {
+    padding: 2rem;
+    width: 24rem;
+    text-align: center;
+
+    @include mixin.bp-medium {
+      padding: 2rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    @include mixin.bp-small {
+      flex-basis: 50%;
+    }
+  }
+
+  &__item:not(:last-child) {
+    border-right: 1px solid #c4c4c4;
+
+    @include mixin.bp-small {
+      border: none;
+    }
+  }
+
+  &__item:nth-child(odd) {
+    @include mixin.bp-small {
+      border-right: 1px solid #c4c4c4;
+    }
+  }
+
+  &__item:nth-child(-n + 2) {
+    @include mixin.bp-small {
+      border-bottom: 1px solid #c4c4c4;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  h1 {
+    color: mixin.$color-primary-dark;
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 2rem 0;
+  }
+
+  h1 span:not(:last-child) {
+    display: flex;
+    flex-direction: column;
+  }
+}

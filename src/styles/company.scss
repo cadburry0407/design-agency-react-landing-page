@@ -1,0 +1,31 @@
+@use '../mixin.scss' as mixin;
+
+.company-logos {
+  background-color: mixin.$color-primary-light-2;
+  border-bottom: 3rem solid mixin.$color-primary-light-1;
+
+  & .container {
+    @include mixin.bp-small {
+      flex-wrap: wrap;
+    }
+  }
+
+  & .logo:last-child {
+    margin: 0 auto;
+  }
+}
+
+.logo {
+  @include mixin.bp-small {
+    flex: 0 0 50%;
+  }
+
+  &__item {
+    width: 100%;
+    padding: 5rem 4rem 5rem 4rem;
+
+    @include mixin.bp-medium {
+      padding: 2rem;
+    }
+  }
+}

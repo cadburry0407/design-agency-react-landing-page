@@ -1,0 +1,93 @@
+@use '../mixin.scss' as mixin;
+
+.header-content {
+  background-color: mixin.$color-primary-light-1;
+  padding-top: 10rem;
+}
+
+.header-content {
+  .container {
+    @include mixin.bp-small {
+      flex-wrap: wrap;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    @include mixin.bp-small {
+      margin-top: 3rem;
+      text-align: center;
+      order: 1;
+    }
+
+    &__slogan {
+      font-size: 5rem;
+      font-weight: 700;
+
+      @include mixin.bp-small {
+        font-size: 3.5rem;
+      }
+    }
+
+    &__description {
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 1rem 0 2.5rem 0;
+
+      @include mixin.bp-small {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__btn-cta {
+      align-self: flex-start;
+      font-size: 2rem;
+      color: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 1rem;
+      background-color: mixin.$color-primary-dark;
+      border: 1px solid mixin.$color-primary-dark;
+      cursor: pointer;
+
+      @include mixin.bp-large {
+        margin-bottom: 3rem;
+      }
+
+      @include mixin.bp-small {
+        align-self: center;
+      }
+    }
+  }
+
+  .header-image {
+    display: flex;
+
+    @include mixin.bp-medium {
+      align-self: center;
+    }
+
+    @include mixin.bp-small {
+      align-self: center;
+      margin: 0 auto;
+    }
+
+    &-item {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 2.6rem;
+      flex-shrink: 0;
+
+      @include mixin.bp-medium {
+        margin-top: 0;
+      }
+
+      @include mixin.bp-small {
+        max-width: 35rem;
+      }
+    }
+  }
+}

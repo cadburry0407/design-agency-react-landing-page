@@ -1,0 +1,103 @@
+@use '../mixin.scss' as mixin;
+
+.footer {
+  display: flex;
+
+  @include mixin.bp-small {
+    flex-wrap: wrap;
+  }
+
+  & div {
+    flex: 1;
+  }
+
+  & .social {
+    margin-right: 20rem;
+
+    @include mixin.bp-medium {
+      margin-right: 10rem;
+    }
+
+    @include mixin.bp-small {
+      border-top: 1px solid #c4c4c4;
+      margin-top: 3rem;
+      flex: 0 0 100%;
+      order: 2;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-left: 2rem;
+      text-transform: uppercase;
+
+      @include mixin.bp-small {
+        margin-top: 3rem;
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+
+    p {
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 3rem 0 2rem 0;
+    }
+
+    .social-icons {
+      margin-bottom: 10rem;
+
+      ul {
+        list-style: none;
+        display: flex;
+      }
+
+      @include mixin.bp-small {
+        margin-bottom: 3rem;
+      }
+    }
+
+    .social-icons img {
+      width: 4rem;
+      height: 4rem;
+      background-color: mixin.$color-primary-dark;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+    }
+  }
+
+  .quicklinks {
+    h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      padding: 1rem 0;
+    }
+
+    ul li a {
+      font-size: 1.8rem;
+      font-weight: 400;
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  .address {
+    h2 {
+      margin-bottom: 3rem;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
+}

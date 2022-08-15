@@ -1,0 +1,75 @@
+@use '../mixin.scss' as mixin;
+
+.subscribe {
+  width: 60rem;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: mixin.$color-primary-dark;
+    margin: 2rem 0;
+  }
+
+  h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #8b8b8b;
+    text-transform: capitalize;
+  }
+
+  form {
+    margin-top: 5rem;
+    display: flex;
+    position: relative;
+
+    @include mixin.bp-small {
+      flex-wrap: wrap;
+    }
+
+    & input {
+      flex: 1;
+      height: 6rem;
+      border: 1px solid #000;
+      border-radius: 1.4rem;
+      outline: none;
+      font-size: 1.6rem;
+      padding: 0 0 0 3rem;
+      font-weight: 400;
+
+      @include mixin.bp-small {
+        text-align: center;
+        padding: 0;
+      }
+    }
+  }
+
+  .btn-subscribe {
+    align-self: flex-start;
+    font-size: 2rem;
+    color: #fff;
+    padding: 1.5rem 2.5rem;
+    border-radius: 1.4rem;
+    background-color: #f55f1d;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    margin-left: -14.3rem;
+
+    @include mixin.bp-small {
+      margin-top: 0.5rem;
+      margin-left: 0rem;
+      width: 100%;
+    }
+  }
+}

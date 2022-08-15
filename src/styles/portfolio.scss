@@ -1,0 +1,89 @@
+@use '../mixin.scss' as mixin;
+
+.portfolio__heading {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.portfolio__apps {
+  margin: 7.5rem 0;
+  flex: 0 0 100%;
+
+  display: flex;
+
+  @include mixin.bp-small {
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  &-item {
+    flex: 0 0 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    @include mixin.bp-small {
+      flex: 0 0 100%;
+    }
+
+    &:last-child {
+      display: flex;
+      flex-direction: column;
+
+      .portfolio__apps-item-website {
+        display: flex;
+        flex-direction: column;
+
+        h2,
+        p {
+          margin-left: 3.5rem;
+
+          @include mixin.bp-small {
+            margin-left: 0;
+          }
+        }
+
+        .portfolio__apps-item-website-image {
+          align-self: flex-end;
+
+          @include mixin.bp-large {
+            width: 90%;
+          }
+
+          @include mixin.bp-small {
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    h2 {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 3.5rem;
+
+      width: 90%;
+    }
+
+    &-website {
+      margin-bottom: 7.5rem;
+
+      @include mixin.bp-small {
+        margin-bottom: 2rem;
+      }
+
+      &-image {
+        margin-bottom: 3rem;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
