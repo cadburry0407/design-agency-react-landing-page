@@ -1,3 +1,9 @@
+# 2rism Landing Page using ReactJS
+
+Figma design converted to html,css,scss and javascript. Fully responsive design using Flex. visit at https://design-agency-react-landing-page.netlify.app/
+
+Design Credit: https://www.figma.com/@thefemijohn
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
