@@ -1,4 +1,4 @@
-# 2rism Landing Page using ReactJS
+# Design Agency Landing Page using ReactJS
 
 Figma design converted to html,css,scss and javascript. Fully responsive design using Flex. visit at https://design-agency-react-landing-page.netlify.app/
 
